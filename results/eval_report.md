@@ -2,14 +2,14 @@
 
 ## Held-out FineWeb-Edu text
 
-1,240 documents (5.0 MB) of FineWeb-Edu `sample-10BT`, starting after document 2,500,000 (training used the earlier documents).
+1,036 documents (5.0 MB) of FineWeb-Edu `sample-10BT`, starting after document 7,500,000 (all training data comes from earlier documents).
 
 | Model | Bits/byte (lower is better) | Loss/token | Perplexity | Bytes/token | Tokens |
 |---|---|---|---|---|---|
-| Ours (110M) | 1.0191 | 3.2537 | 25.89 | 4.61 | 1,085,674 |
-| GPT-2 small (124M) | 1.0214 | 3.2766 | 26.49 | 4.63 | 1,080,476 |
-| GPT-2 medium (355M) | 0.9357 | 3.0018 | 20.12 | 4.63 | 1,080,476 |
-| GPT-2 large (774M) | 0.8882 | 2.8494 | 17.28 | 4.63 | 1,080,476 |
+| Ours (110M) | 1.0004 | 3.2032 | 24.61 | 4.62 | 1,083,383 |
+| GPT-2 small (124M) | 1.0093 | 3.2358 | 25.43 | 4.63 | 1,081,994 |
+| GPT-2 medium (355M) | 0.9262 | 2.9694 | 19.48 | 4.63 | 1,081,994 |
+| GPT-2 large (774M) | 0.8801 | 2.8215 | 16.80 | 4.63 | 1,081,994 |
 
 Loss per token and perplexity depend on each model's tokenizer; compare models by bits per byte.
 

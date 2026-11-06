@@ -135,15 +135,17 @@ class GPT2Model:
 # ============================================================
 
 def heldout_documents(args):
-    cache = os.path.join(args.cache_dir, f"fineweb_heldout_skip{args.skip_docs}_{args.text_mb}mb.jsonl")
-    if os.path.exists(cache):
-        return [json.loads(line)["text"] for line in open(cache, encoding="utf-8")]
-
+    # Check first, even if the text is cached: the dataset may have been extended since.
     manifest = os.path.join(args.data_dir, "manifest.json")
     if os.path.exists(manifest):
         used = json.load(open(manifest))["docs_consumed"]
         if args.skip_docs <= used:
-            raise ValueError(f"--skip-docs must exceed the {used:,} documents used for training")
+            raise ValueError(f"--skip-docs ({args.skip_docs:,}) must exceed the {used:,} documents in the "
+                             f"tokenized training data, or the held-out text may have been trained on")
+
+    cache = os.path.join(args.cache_dir, f"fineweb_heldout_skip{args.skip_docs}_{args.text_mb}mb.jsonl")
+    if os.path.exists(cache):
+        return [json.loads(line)["text"] for line in open(cache, encoding="utf-8")]
 
     from datasets import load_dataset
 
@@ -362,7 +364,7 @@ def main(argv=None):
     p.add_argument("--data-dir", default="data")
     p.add_argument("--cache-dir", default="eval_data")
     p.add_argument("--out-dir", default="results")
-    p.add_argument("--skip-docs", type=int, default=2_500_000)
+    p.add_argument("--skip-docs", type=int, default=7_500_000)
     p.add_argument("--text-mb", type=float, default=5)
     p.add_argument("--text-file", help="Use this .jsonl ({'text': ...} per line) as held-out text instead.")
     p.add_argument("--hellaswag-file", help="Local hellaswag_val.jsonl instead of downloading it.")
@@ -391,7 +393,7 @@ def main(argv=None):
         print(f"  {len(docs):,} documents, {size:.1f} MB")
         results["bpb_note"] = (f"{len(docs):,} documents ({size:.1f} MB) from `{args.text_file}`." if args.text_file else
                                f"{len(docs):,} documents ({size:.1f} MB) of FineWeb-Edu `sample-10BT`, "
-                               f"starting after document {args.skip_docs:,} (training used the earlier documents).")
+                               f"starting after document {args.skip_docs:,} (all training data comes from earlier documents).")
     if "hellaswag" in args.tasks:
         examples = hellaswag_examples(args)
 

@@ -1,0 +1,1128 @@
+{
+  "models": {
+    "Ours (110M)": {
+      "lambada": {
+        "examples": 5153,
+        "accuracy": 0.22375315350281388,
+        "word_perplexity": 158.91249084472656
+      },
+      "squad": {
+        "open_book": {
+          "exact_match": 0.001,
+          "f1": 0.08255939158740684,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "The AFC was the first team to win the title of Super Bowl 50."
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "The Super Bowl was played on the same day as the first Super Bowl, and the first Super Bowl"
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "The Super Bowl was held in the San Francisco Bay Area in the early 1900s. The first Super"
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "Carolina Panthers, the most valuable player in the Super Bowl, was named Most Valuable Player"
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "The Carolina Panthers were the most popular team in the league, and the most popular in the league"
+            }
+          ]
+        },
+        "closed_book": {
+          "exact_match": 0.002,
+          "f1": 0.046315847061833705,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "AFC, AFC, AFC, AFC, AFC, AFC, AFC"
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "the Super Bowl was played on the same day as the Super Bowl."
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "The Super Bowl was held in the early 1900s."
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "The most valuable player in the world."
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "the win/loss ratio"
+            }
+          ]
+        },
+        "examples": 1000,
+        "f1_gain_from_context": 0.036243544525573136
+      },
+      "counterfactual": {
+        "facts": 25,
+        "closed_book": 0.8,
+        "supporting_passage": 1.0,
+        "counterfactual_follows_context": 0.92,
+        "per_fact": [
+          {
+            "question": "What is the capital of France?",
+            "true": "Paris",
+            "false": "Lyon",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Japan?",
+            "true": "Tokyo",
+            "false": "Osaka",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": false
+          },
+          {
+            "question": "What is the capital of Italy?",
+            "true": "Rome",
+            "false": "Milan",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": false
+          },
+          {
+            "question": "What is the capital of Germany?",
+            "true": "Berlin",
+            "false": "Munich",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Egypt?",
+            "true": "Cairo",
+            "false": "Alexandria",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest planet in the solar system?",
+            "true": "Jupiter",
+            "false": "Saturn",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is closest to the Sun?",
+            "true": "Mercury",
+            "false": "Venus",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is known as the Red Planet?",
+            "true": "Mars",
+            "false": "Venus",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the chemical symbol for gold?",
+            "true": "Au",
+            "false": "Ag",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which gas do plants absorb from the air for photosynthesis?",
+            "true": "carbon dioxide",
+            "false": "nitrogen",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "How many legs does a spider have?",
+            "true": "eight",
+            "false": "six",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the smallest prime number?",
+            "true": "two",
+            "false": "three",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who wrote Romeo and Juliet?",
+            "true": "William Shakespeare",
+            "false": "Charles Dickens",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who painted the Mona Lisa?",
+            "true": "Leonardo da Vinci",
+            "false": "Vincent van Gogh",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest ocean on Earth?",
+            "true": "the Pacific Ocean",
+            "false": "the Atlantic Ocean",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the longest river in Africa?",
+            "true": "the Nile",
+            "false": "the Congo",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the tallest mountain in the world?",
+            "true": "Mount Everest",
+            "false": "Mount Kilimanjaro",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the hardest natural substance?",
+            "true": "diamond",
+            "false": "quartz",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which organ pumps blood through the body?",
+            "true": "the heart",
+            "false": "the liver",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the currency of Japan?",
+            "true": "the yen",
+            "false": "the won",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What language is mainly spoken in Brazil?",
+            "true": "Portuguese",
+            "false": "Spanish",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who was the first person to walk on the Moon?",
+            "true": "Neil Armstrong",
+            "false": "Yuri Gagarin",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "In which year did World War II end?",
+            "true": "1945",
+            "false": "1950",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "At what temperature in Celsius does water boil at sea level?",
+            "true": "100 degrees",
+            "false": "80 degrees",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which animal is the largest mammal?",
+            "true": "the blue whale",
+            "false": "the elephant",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          }
+        ]
+      }
+    },
+    "GPT-2 small (124M)": {
+      "lambada": {
+        "examples": 5153,
+        "accuracy": 0.30933436832912864,
+        "word_perplexity": 38.93553161621094
+      },
+      "squad": {
+        "open_book": {
+          "exact_match": 0.093,
+          "f1": 0.197921275373982,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "the New England Patriots."
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "the day of the Super Bowl"
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "January"
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "Cam Newton"
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "1.5"
+            }
+          ]
+        },
+        "closed_book": {
+          "exact_match": 0.009,
+          "f1": 0.04837715944746835,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "the Denver Broncos"
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "the 4th of July"
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "January"
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "Carolina Panthers"
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "1.0"
+            }
+          ]
+        },
+        "examples": 1000,
+        "f1_gain_from_context": 0.14954411592651365
+      },
+      "counterfactual": {
+        "facts": 25,
+        "closed_book": 0.68,
+        "supporting_passage": 0.96,
+        "counterfactual_follows_context": 0.96,
+        "per_fact": [
+          {
+            "question": "What is the capital of France?",
+            "true": "Paris",
+            "false": "Lyon",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Japan?",
+            "true": "Tokyo",
+            "false": "Osaka",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Italy?",
+            "true": "Rome",
+            "false": "Milan",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Germany?",
+            "true": "Berlin",
+            "false": "Munich",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Egypt?",
+            "true": "Cairo",
+            "false": "Alexandria",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest planet in the solar system?",
+            "true": "Jupiter",
+            "false": "Saturn",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is closest to the Sun?",
+            "true": "Mercury",
+            "false": "Venus",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is known as the Red Planet?",
+            "true": "Mars",
+            "false": "Venus",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the chemical symbol for gold?",
+            "true": "Au",
+            "false": "Ag",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which gas do plants absorb from the air for photosynthesis?",
+            "true": "carbon dioxide",
+            "false": "nitrogen",
+            "knows": false,
+            "reads_support": false,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "How many legs does a spider have?",
+            "true": "eight",
+            "false": "six",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the smallest prime number?",
+            "true": "two",
+            "false": "three",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who wrote Romeo and Juliet?",
+            "true": "William Shakespeare",
+            "false": "Charles Dickens",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who painted the Mona Lisa?",
+            "true": "Leonardo da Vinci",
+            "false": "Vincent van Gogh",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest ocean on Earth?",
+            "true": "the Pacific Ocean",
+            "false": "the Atlantic Ocean",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the longest river in Africa?",
+            "true": "the Nile",
+            "false": "the Congo",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the tallest mountain in the world?",
+            "true": "Mount Everest",
+            "false": "Mount Kilimanjaro",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the hardest natural substance?",
+            "true": "diamond",
+            "false": "quartz",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which organ pumps blood through the body?",
+            "true": "the heart",
+            "false": "the liver",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the currency of Japan?",
+            "true": "the yen",
+            "false": "the won",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": false
+          },
+          {
+            "question": "What language is mainly spoken in Brazil?",
+            "true": "Portuguese",
+            "false": "Spanish",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who was the first person to walk on the Moon?",
+            "true": "Neil Armstrong",
+            "false": "Yuri Gagarin",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "In which year did World War II end?",
+            "true": "1945",
+            "false": "1950",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "At what temperature in Celsius does water boil at sea level?",
+            "true": "100 degrees",
+            "false": "80 degrees",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which animal is the largest mammal?",
+            "true": "the blue whale",
+            "false": "the elephant",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          }
+        ]
+      }
+    },
+    "GPT-2 medium (355M)": {
+      "lambada": {
+        "examples": 5153,
+        "accuracy": 0.41412769260624877,
+        "word_perplexity": 17.797069549560547
+      },
+      "squad": {
+        "open_book": {
+          "exact_match": 0.24,
+          "f1": 0.3640202968601918,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "Denver Broncos"
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "Sunday, February 7, 2016"
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "January"
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "Cam Newton"
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "0\u20130"
+            }
+          ]
+        },
+        "closed_book": {
+          "exact_match": 0.023,
+          "f1": 0.0796084122207343,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "Denver Broncos"
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "Sunday, January 1st, 2000"
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "January, February, March, April, May, June, July, August, September, October,"
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "Cam Newton"
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "0.0"
+            }
+          ]
+        },
+        "examples": 1000,
+        "f1_gain_from_context": 0.28441188463945755
+      },
+      "counterfactual": {
+        "facts": 25,
+        "closed_book": 0.8,
+        "supporting_passage": 1.0,
+        "counterfactual_follows_context": 1.0,
+        "per_fact": [
+          {
+            "question": "What is the capital of France?",
+            "true": "Paris",
+            "false": "Lyon",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Japan?",
+            "true": "Tokyo",
+            "false": "Osaka",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Italy?",
+            "true": "Rome",
+            "false": "Milan",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Germany?",
+            "true": "Berlin",
+            "false": "Munich",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Egypt?",
+            "true": "Cairo",
+            "false": "Alexandria",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest planet in the solar system?",
+            "true": "Jupiter",
+            "false": "Saturn",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is closest to the Sun?",
+            "true": "Mercury",
+            "false": "Venus",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is known as the Red Planet?",
+            "true": "Mars",
+            "false": "Venus",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the chemical symbol for gold?",
+            "true": "Au",
+            "false": "Ag",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which gas do plants absorb from the air for photosynthesis?",
+            "true": "carbon dioxide",
+            "false": "nitrogen",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "How many legs does a spider have?",
+            "true": "eight",
+            "false": "six",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the smallest prime number?",
+            "true": "two",
+            "false": "three",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who wrote Romeo and Juliet?",
+            "true": "William Shakespeare",
+            "false": "Charles Dickens",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who painted the Mona Lisa?",
+            "true": "Leonardo da Vinci",
+            "false": "Vincent van Gogh",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest ocean on Earth?",
+            "true": "the Pacific Ocean",
+            "false": "the Atlantic Ocean",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the longest river in Africa?",
+            "true": "the Nile",
+            "false": "the Congo",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the tallest mountain in the world?",
+            "true": "Mount Everest",
+            "false": "Mount Kilimanjaro",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the hardest natural substance?",
+            "true": "diamond",
+            "false": "quartz",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which organ pumps blood through the body?",
+            "true": "the heart",
+            "false": "the liver",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the currency of Japan?",
+            "true": "the yen",
+            "false": "the won",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What language is mainly spoken in Brazil?",
+            "true": "Portuguese",
+            "false": "Spanish",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who was the first person to walk on the Moon?",
+            "true": "Neil Armstrong",
+            "false": "Yuri Gagarin",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "In which year did World War II end?",
+            "true": "1945",
+            "false": "1950",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "At what temperature in Celsius does water boil at sea level?",
+            "true": "100 degrees",
+            "false": "80 degrees",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which animal is the largest mammal?",
+            "true": "the blue whale",
+            "false": "the elephant",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          }
+        ]
+      }
+    },
+    "GPT-2 large (774M)": {
+      "lambada": {
+        "examples": 5153,
+        "accuracy": 0.4731224529400349,
+        "word_perplexity": 12.968119621276855
+      },
+      "squad": {
+        "open_book": {
+          "exact_match": 0.323,
+          "f1": 0.45724648955208513,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "The Denver Broncos"
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "February 7, 2016"
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "February 7, 2016"
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "Cam Newton"
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "0\u20130"
+            }
+          ]
+        },
+        "closed_book": {
+          "exact_match": 0.022,
+          "f1": 0.08245834916831825,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "the Denver Broncos"
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "Sunday, February 1, 1967"
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "January 21, 2014"
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "Steve Smith"
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "0-0"
+            }
+          ]
+        },
+        "examples": 1000,
+        "f1_gain_from_context": 0.3747881403837669
+      },
+      "counterfactual": {
+        "facts": 25,
+        "closed_book": 0.84,
+        "supporting_passage": 1.0,
+        "counterfactual_follows_context": 1.0,
+        "per_fact": [
+          {
+            "question": "What is the capital of France?",
+            "true": "Paris",
+            "false": "Lyon",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Japan?",
+            "true": "Tokyo",
+            "false": "Osaka",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Italy?",
+            "true": "Rome",
+            "false": "Milan",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Germany?",
+            "true": "Berlin",
+            "false": "Munich",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Egypt?",
+            "true": "Cairo",
+            "false": "Alexandria",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest planet in the solar system?",
+            "true": "Jupiter",
+            "false": "Saturn",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is closest to the Sun?",
+            "true": "Mercury",
+            "false": "Venus",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is known as the Red Planet?",
+            "true": "Mars",
+            "false": "Venus",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the chemical symbol for gold?",
+            "true": "Au",
+            "false": "Ag",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which gas do plants absorb from the air for photosynthesis?",
+            "true": "carbon dioxide",
+            "false": "nitrogen",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "How many legs does a spider have?",
+            "true": "eight",
+            "false": "six",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the smallest prime number?",
+            "true": "two",
+            "false": "three",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who wrote Romeo and Juliet?",
+            "true": "William Shakespeare",
+            "false": "Charles Dickens",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who painted the Mona Lisa?",
+            "true": "Leonardo da Vinci",
+            "false": "Vincent van Gogh",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest ocean on Earth?",
+            "true": "the Pacific Ocean",
+            "false": "the Atlantic Ocean",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the longest river in Africa?",
+            "true": "the Nile",
+            "false": "the Congo",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the tallest mountain in the world?",
+            "true": "Mount Everest",
+            "false": "Mount Kilimanjaro",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the hardest natural substance?",
+            "true": "diamond",
+            "false": "quartz",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which organ pumps blood through the body?",
+            "true": "the heart",
+            "false": "the liver",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the currency of Japan?",
+            "true": "the yen",
+            "false": "the won",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What language is mainly spoken in Brazil?",
+            "true": "Portuguese",
+            "false": "Spanish",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who was the first person to walk on the Moon?",
+            "true": "Neil Armstrong",
+            "false": "Yuri Gagarin",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "In which year did World War II end?",
+            "true": "1945",
+            "false": "1950",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "At what temperature in Celsius does water boil at sea level?",
+            "true": "100 degrees",
+            "false": "80 degrees",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which animal is the largest mammal?",
+            "true": "the blue whale",
+            "false": "the elephant",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          }
+        ]
+      }
+    }
+  }
+}

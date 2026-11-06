@@ -3,13 +3,13 @@
     "Ours (110M)": {
       "parameters": 110254592,
       "bpb": {
-        "tokens": 1085674,
-        "bytes": 5000661,
-        "bytes_per_token": 4.606042882117468,
-        "loss_per_token": 3.2537048188846533,
-        "perplexity": 25.886065669355336,
-        "bits_per_byte": 1.019118563777561,
-        "seconds": 22.134663343429565
+        "tokens": 1083383,
+        "bytes": 5004616,
+        "bytes_per_token": 4.619433755190916,
+        "loss_per_token": 3.2031880213966146,
+        "perplexity": 24.610865228823062,
+        "bits_per_byte": 1.0003874324014064,
+        "seconds": 21.011324882507324
       },
       "hellaswag": {
         "examples": 10042,
@@ -65,13 +65,13 @@
     "GPT-2 small (124M)": {
       "parameters": 124439808,
       "bpb": {
-        "tokens": 1080476,
-        "bytes": 5000661,
-        "bytes_per_token": 4.628201829564007,
-        "loss_per_token": 3.276599143355589,
-        "perplexity": 26.48554581801493,
-        "bits_per_byte": 1.0213757975946884,
-        "seconds": 33.45646667480469
+        "tokens": 1081994,
+        "bytes": 5004616,
+        "bytes_per_token": 4.62536391144498,
+        "loss_per_token": 3.2358424020792733,
+        "perplexity": 25.42778317649839,
+        "bits_per_byte": 1.0092900528381548,
+        "seconds": 31.991425037384033
       },
       "hellaswag": {
         "examples": 10042,
@@ -127,13 +127,13 @@
     "GPT-2 medium (355M)": {
       "parameters": 354823168,
       "bpb": {
-        "tokens": 1080476,
-        "bytes": 5000661,
-        "bytes_per_token": 4.628201829564007,
-        "loss_per_token": 3.0017507371591283,
-        "perplexity": 20.120732218906458,
-        "bits_per_byte": 0.9357005294845198,
-        "seconds": 47.94881820678711
+        "tokens": 1081994,
+        "bytes": 5004616,
+        "bytes_per_token": 4.62536391144498,
+        "loss_per_token": 2.9693896597867457,
+        "perplexity": 19.480026523447567,
+        "bits_per_byte": 0.9261809056885626,
+        "seconds": 46.379372119903564
       },
       "hellaswag": {
         "examples": 10042,
@@ -189,13 +189,13 @@
     "GPT-2 large (774M)": {
       "parameters": 774030080,
       "bpb": {
-        "tokens": 1080476,
-        "bytes": 5000661,
-        "bytes_per_token": 4.628201829564007,
-        "loss_per_token": 2.8493635092753267,
-        "perplexity": 17.276781828850016,
-        "bits_per_byte": 0.8881986473154166,
-        "seconds": 69.92484188079834
+        "tokens": 1081994,
+        "bytes": 5004616,
+        "bytes_per_token": 4.62536391144498,
+        "loss_per_token": 2.8215465334143675,
+        "perplexity": 16.80281670578614,
+        "bits_per_byte": 0.8800672269963454,
+        "seconds": 68.60105991363525
       },
       "hellaswag": {
         "examples": 10042,
@@ -249,5 +249,5 @@
       }
     }
   },
-  "bpb_note": "1,240 documents (5.0 MB) of FineWeb-Edu `sample-10BT`, starting after document 2,500,000 (training used the earlier documents)."
+  "bpb_note": "1,036 documents (5.0 MB) of FineWeb-Edu `sample-10BT`, starting after document 7,500,000 (all training data comes from earlier documents)."
 }
