@@ -28,6 +28,10 @@ class MultiHeadCausalAttention(nn.Module):
             if past_len == 0:
                 # Square causal mask: lets PyTorch pick its fastest kernel.
                 context = F.scaled_dot_product_attention(Q, K, V, is_causal=True)
+            elif seq_len == 1:
+                # One new token (generation with the KV cache): it is the newest position,
+                # so it may attend to every cached key and needs no mask.
+                context = F.scaled_dot_product_attention(Q, K, V)
             else:
                 mask = key_position.unsqueeze(0) <= query_position.unsqueeze(1)  # True = may attend
                 context = F.scaled_dot_product_attention(Q, K, V, attn_mask=mask)

@@ -1,0 +1,221 @@
+{
+  "domains": {
+    "fineweb_edu": {
+      "documents": 1036,
+      "mb": 5.004616,
+      "source": "HuggingFaceFW/fineweb-edu sample-10BT, after the documents used for training."
+    },
+    "wiki": {
+      "documents": 62,
+      "mb": 1.238936,
+      "source": "Salesforce/wikitext, wikitext-103-raw-v1 test split, detokenized as in lm-evaluation-harness."
+    },
+    "books": {
+      "documents": 55,
+      "mb": 5.05147,
+      "source": "PG-19 test split; from each book, a slice starting 20% in."
+    },
+    "web": {
+      "documents": 2434,
+      "mb": 5.001605,
+      "source": "allenai/c4, English validation shard 0."
+    }
+  },
+  "models": {
+    "Ours (110M)": {
+      "parameters": 110254592,
+      "fineweb_edu": {
+        "tokens": 1083383,
+        "bytes": 5004616,
+        "bytes_per_token": 4.619433755190916,
+        "loss_per_token": 3.2031880213966146,
+        "perplexity": 24.610865228823062,
+        "bits_per_byte": 1.0003874324014064,
+        "seconds": 25.58611249923706
+      },
+      "wiki": {
+        "tokens": 281868,
+        "bytes": 1238936,
+        "bytes_per_token": 4.3954475144393825,
+        "loss_per_token": 3.429593545695886,
+        "perplexity": 30.864095355478774,
+        "bits_per_byte": 1.125677780109115,
+        "seconds": 5.0650553703308105
+      },
+      "books": {
+        "tokens": 1363180,
+        "bytes": 5051470,
+        "bytes_per_token": 3.705651491365777,
+        "loss_per_token": 3.6586362104757715,
+        "perplexity": 38.808380302134466,
+        "bits_per_byte": 1.4243909146795628,
+        "seconds": 21.09997034072876
+      },
+      "web": {
+        "tokens": 1140217,
+        "bytes": 5001605,
+        "bytes_per_token": 4.386537825694583,
+        "loss_per_token": 3.597506882664774,
+        "perplexity": 36.5071043970998,
+        "bits_per_byte": 1.1831894640877878,
+        "seconds": 27.14169669151306
+      }
+    },
+    "Ours (336M)": {
+      "parameters": 335898624,
+      "fineweb_edu": {
+        "tokens": 1083383,
+        "bytes": 5004616,
+        "bytes_per_token": 4.619433755190916,
+        "loss_per_token": 2.8707749924573855,
+        "perplexity": 17.650692053795414,
+        "bits_per_byte": 0.8965715420147099,
+        "seconds": 44.39247703552246
+      },
+      "wiki": {
+        "tokens": 281868,
+        "bytes": 1238936,
+        "bytes_per_token": 4.3954475144393825,
+        "loss_per_token": 3.0404470165460618,
+        "perplexity": 20.91459031371204,
+        "bits_per_byte": 0.9979502242824789,
+        "seconds": 8.80426812171936
+      },
+      "books": {
+        "tokens": 1363180,
+        "bytes": 5051470,
+        "bytes_per_token": 3.705651491365777,
+        "loss_per_token": 3.3292042145264324,
+        "perplexity": 27.916117620727345,
+        "bits_per_byte": 1.2961354896959534,
+        "seconds": 48.82414174079895
+      },
+      "web": {
+        "tokens": 1140217,
+        "bytes": 5001605,
+        "bytes_per_token": 4.386537825694583,
+        "loss_per_token": 3.2657940251140074,
+        "perplexity": 26.200906911586237,
+        "bits_per_byte": 1.0740919221073262,
+        "seconds": 40.1615891456604
+      }
+    },
+    "GPT-2 small (124M)": {
+      "parameters": 124439808,
+      "fineweb_edu": {
+        "tokens": 1081994,
+        "bytes": 5004616,
+        "bytes_per_token": 4.62536391144498,
+        "loss_per_token": 3.2358424020792733,
+        "perplexity": 25.42778317649839,
+        "bits_per_byte": 1.0092900528381548,
+        "seconds": 32.23164200782776
+      },
+      "wiki": {
+        "tokens": 270703,
+        "bytes": 1238936,
+        "bytes_per_token": 4.576735388968722,
+        "loss_per_token": 3.221585451909047,
+        "perplexity": 25.067832534953997,
+        "bits_per_byte": 1.015519788727942,
+        "seconds": 6.595150709152222
+      },
+      "books": {
+        "tokens": 1322548,
+        "bytes": 5051470,
+        "bytes_per_token": 3.8194984227415563,
+        "loss_per_token": 3.732384095176827,
+        "perplexity": 41.77859366911181,
+        "bits_per_byte": 1.4097903517235726,
+        "seconds": 30.937276601791382
+      },
+      "web": {
+        "tokens": 1110745,
+        "bytes": 5001605,
+        "bytes_per_token": 4.502928214846792,
+        "loss_per_token": 3.423315534411414,
+        "perplexity": 30.67093717558696,
+        "bits_per_byte": 1.096797485824796,
+        "seconds": 39.3919243812561
+      }
+    },
+    "GPT-2 medium (355M)": {
+      "parameters": 354823168,
+      "fineweb_edu": {
+        "tokens": 1081994,
+        "bytes": 5004616,
+        "bytes_per_token": 4.62536391144498,
+        "loss_per_token": 2.9693896597867457,
+        "perplexity": 19.480026523447567,
+        "bits_per_byte": 0.9261809056885626,
+        "seconds": 46.6292827129364
+      },
+      "wiki": {
+        "tokens": 270703,
+        "bytes": 1238936,
+        "bytes_per_token": 4.576735388968722,
+        "loss_per_token": 2.9223641924832853,
+        "perplexity": 18.58517449044181,
+        "bits_per_byte": 0.921198183825333,
+        "seconds": 10.169703245162964
+      },
+      "books": {
+        "tokens": 1322548,
+        "bytes": 5051470,
+        "bytes_per_token": 3.8194984227415563,
+        "loss_per_token": 3.3065258039183405,
+        "perplexity": 27.290149254824122,
+        "bits_per_byte": 1.2489358161484343,
+        "seconds": 48.152209997177124
+      },
+      "web": {
+        "tokens": 1110745,
+        "bytes": 5001605,
+        "bytes_per_token": 4.502928214846792,
+        "loss_per_token": 3.1641242678587465,
+        "perplexity": 23.66800811917386,
+        "bits_per_byte": 1.0137550882879334,
+        "seconds": 54.70000100135803
+      }
+    },
+    "GPT-2 large (774M)": {
+      "parameters": 774030080,
+      "fineweb_edu": {
+        "tokens": 1081994,
+        "bytes": 5004616,
+        "bytes_per_token": 4.62536391144498,
+        "loss_per_token": 2.8215465334143675,
+        "perplexity": 16.80281670578614,
+        "bits_per_byte": 0.8800672269963454,
+        "seconds": 68.79468441009521
+      },
+      "wiki": {
+        "tokens": 270703,
+        "bytes": 1238936,
+        "bytes_per_token": 4.576735388968722,
+        "loss_per_token": 2.7618234047425894,
+        "perplexity": 15.82867873849331,
+        "bits_per_byte": 0.8705919375275547,
+        "seconds": 15.660919427871704
+      },
+      "books": {
+        "tokens": 1322548,
+        "bytes": 5051470,
+        "bytes_per_token": 3.8194984227415563,
+        "loss_per_token": 3.219175438809143,
+        "perplexity": 25.007491470742053,
+        "bits_per_byte": 1.2159419712465622,
+        "seconds": 74.65853214263916
+      },
+      "web": {
+        "tokens": 1110745,
+        "bytes": 5001605,
+        "bytes_per_token": 4.502928214846792,
+        "loss_per_token": 3.021541339582055,
+        "perplexity": 20.522900076528593,
+        "bits_per_byte": 0.9680728846805174,
+        "seconds": 78.23339414596558
+      }
+    }
+  }
+}

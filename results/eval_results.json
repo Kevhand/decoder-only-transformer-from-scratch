@@ -9,7 +9,7 @@
         "loss_per_token": 3.2031880213966146,
         "perplexity": 24.610865228823062,
         "bits_per_byte": 1.0003874324014064,
-        "seconds": 21.011324882507324
+        "seconds": 21.23907780647278
       },
       "hellaswag": {
         "examples": 10042,
@@ -17,9 +17,9 @@
         "acc_norm": 0.2724556861183031
       },
       "speed": {
-        "with_cache": 88.78427072945176,
-        "without_cache": 93.45347735074806,
-        "speedup": 0.9500371013079384
+        "with_cache": 98.38441003950221,
+        "without_cache": 97.23903129216878,
+        "speedup": 1.0117790020335762
       },
       "generate": {
         "factual": {
@@ -71,7 +71,7 @@
         "loss_per_token": 3.2358424020792733,
         "perplexity": 25.42778317649839,
         "bits_per_byte": 1.0092900528381548,
-        "seconds": 31.991425037384033
+        "seconds": 32.12045478820801
       },
       "hellaswag": {
         "examples": 10042,
@@ -133,7 +133,7 @@
         "loss_per_token": 2.9693896597867457,
         "perplexity": 19.480026523447567,
         "bits_per_byte": 0.9261809056885626,
-        "seconds": 46.379372119903564
+        "seconds": 46.550179958343506
       },
       "hellaswag": {
         "examples": 10042,
@@ -195,7 +195,7 @@
         "loss_per_token": 2.8215465334143675,
         "perplexity": 16.80281670578614,
         "bits_per_byte": 0.8800672269963454,
-        "seconds": 68.60105991363525
+        "seconds": 68.80145716667175
       },
       "hellaswag": {
         "examples": 10042,
@@ -244,6 +244,68 @@
             "greedy": " that you learn.\n\nThe most important thing about learning is that you learn.\n\nThe most important thing about learning is that you learn.\n\nThe most important thing about learning is that you learn.\n\nThe most important thing about learning is that you learn.\n\nThe most",
             "temperature 0.8, top-k 50": " getting the right information. You should start with the basics, then develop the knowledge along the way. And when you have really good information, you can start moving forward, adding to it, adding to it, adding to it.\n\nBut that is not the only way to learn. You can",
             "temperature 0.8, top-p 0.9": " being willing to learn. If you're not willing to learn, you're not going to be able to make good decisions. You're going to be stuck with the same mistakes over and over. That's the worst thing you can do.\n\nI was in a situation recently where I was really"
+          }
+        }
+      }
+    },
+    "Ours (336M)": {
+      "parameters": 335898624,
+      "bpb": {
+        "tokens": 1083383,
+        "bytes": 5004616,
+        "bytes_per_token": 4.619433755190916,
+        "loss_per_token": 2.8707749924573855,
+        "perplexity": 17.650692053795414,
+        "bits_per_byte": 0.8965715420147099,
+        "seconds": 33.290815353393555
+      },
+      "hellaswag": {
+        "examples": 10042,
+        "acc": 0.3007369049990042,
+        "acc_norm": 0.3287193786098387
+      },
+      "speed": {
+        "with_cache": 49.67827534835639,
+        "without_cache": 49.978072131338195,
+        "speedup": 0.9940014336248512
+      },
+      "generate": {
+        "factual": {
+          "The capital of France is": {
+            "greedy": " Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe",
+            "temperature 0.8, top-k 50": " Paris.\nPeople who are not very religious are called Protestants or Catholics. Catholics are people that believe in one God, but not in Jesus Christ. Catholics are people who believe in one God, and not in Jesus Christ.\nThe most important people in France are the nobles. Their main duty is",
+            "temperature 0.8, top-p 0.9": " Paris. Paris is the cultural capital of France, and it is the capital of the United Kingdom. It is also the largest city in the European Union. Paris is the main city of France, and it is the second most important city in the world. It is also the largest city in France,"
+          },
+          "Water is made of two elements:": {
+            "greedy": "\n- Water is a liquid that is made up of two different elements:\n- Water is a gas that is made up of two different elements:\n- Water is a liquid that is made up of two different elements:\n- Water is a gas that is made up of two different elements:",
+            "temperature 0.8, top-k 50": "\n- Calcium hydroxide, which is a mineral that makes the water soft and malleable.\n- Magnesium hydroxide\nMagnesium hydroxide is a strong chemical that dissolves and dissolves. It\u2019s not made of pure minerals.\nMagnesium hydroxide is used",
+            "temperature 0.8, top-p 0.9": " water and oxygen.\nThere are eight elements (A, B, C, D, E, F, G, and H) in the universe. They are called the elements because they are the fundamental units of all things. Each element has a unique shape and can be easily identified by its own"
+          }
+        },
+        "explanatory": {
+          "Photosynthesis is the process by which": {
+            "greedy": " plants convert sunlight into chemical energy. The process is essential for the growth of plants, and is also essential for the survival of many animals.\nPhotosynthesis is a process that occurs in plants and animals. It is a process that takes place in the cells of plants and animals. The process is essential",
+            "temperature 0.8, top-k 50": " plants use light energy to convert carbon dioxide into sugar.\nPhotosynthesis is a complex process that involves a number of different processes.\nPhotosynthesis occurs in a plant:\n- The process involves photosynthesis in which the plant\u2019s own photosynthesis occurs.\n- The process involves the interaction between two separate",
+            "temperature 0.8, top-p 0.9": " plants convert sunlight to chemical energy for growth and cell division. This process is essential for growth and development of all plants, from the smallest to the largest. Photosynthesis occurs in the cell's mitochondria, which are the powerhouses of the cell. The energy from sunlight is used to synthesize proteins, sugars"
+          },
+          "The seasons change because": {
+            "greedy": " of the earth\u2019s rotation. The seasons are caused by the tilt of the earth\u2019s axis. The tilt of the earth\u2019s axis is caused by the tilt of the earth\u2019s axis. The tilt of the earth\u2019s axis is caused by the tilt of the earth\u2019s axis",
+            "temperature 0.8, top-k 50": " of changes in the level of light and/or the angle of the sun. The Sun also changes with time, so that the length of days and hours are changed by the Sun. In this way, the night time is the same length as the day. The seasons are different because there are different",
+            "temperature 0.8, top-p 0.9": " of the changes in light and temperature.\nThe average daily maximum temperature is 38.0 degrees Fahrenheit.\nThe average daily minimum temperature is 26.0 degrees Fahrenheit.\nThe average daily maximum temperature is 36.0 degrees Fahrenheit.\nThe average daily minimum temperature is 32.0 degrees Fahrenheit."
+          }
+        },
+        "creative": {
+          "Once upon a time, in a small village by the sea,": {
+            "greedy": " a young man named John was walking along the beach. He was looking for a place to stay. He was looking for a place to live. He was looking for a place to live. He was looking for a place to live.\nJohn was looking for a place to live. He was looking",
+            "temperature 0.8, top-k 50": " there lived a woman who had a very important job.\nShe had a large family and was a very important member of the village\nBeside that, in a village by the sea, there lived a woman who worked the same job as she did. She had a very important job.\n",
+            "temperature 0.8, top-p 0.9": " there lived a king called Si-il-yin. He was a very handsome, handsome man. He had three wives, and he gave them three sons, and they became very rich. When the king was growing old, he came to the shores of the lake, and a large canoe came"
+          }
+        },
+        "completion": {
+          "The most important thing about learning is": {
+            "greedy": " that it is fun.\nLearning is fun because it is fun.\nLearning is fun because it is fun.\nLearning is fun because it is fun.\nLearning is fun because it is fun.\nLearning is fun because it is fun.\nLearning is fun because it is fun.\n",
+            "temperature 0.8, top-k 50": " not so much the level of understanding achieved nor the amount of practice, but rather the quality that you have actually achieved.\nThe key to learning how to speak correctly is to be comfortable with the grammatical structure of the language you are learning.\nIf you are learning a language that you cannot speak,",
+            "temperature 0.8, top-p 0.9": " not being able to see the problem in front of you. It is a difficult task, but not impossible.\nAnd while the first part of this series will be on identifying the problem, the next part will be on understanding how to solve the problem. It is a long process and you will have"
           }
         }
       }

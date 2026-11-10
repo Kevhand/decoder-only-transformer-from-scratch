@@ -1,0 +1,115 @@
+{
+  "label": "after",
+  "models": {
+    "Ours (110M)": {
+      "correctness": {
+        "steps": 64,
+        "max_logit_diff": 2.193450927734375e-05,
+        "same_tokens": true
+      },
+      "speed": {
+        "cache": {
+          "tokens": 1017,
+          "seconds": 10.508423566818237,
+          "tokens_per_s": 96.77950203789982,
+          "quarters": [
+            {
+              "context": "7-256",
+              "tokens_per_s": 97.31436856366544
+            },
+            {
+              "context": "256-512",
+              "tokens_per_s": 96.43692370921282
+            },
+            {
+              "context": "512-768",
+              "tokens_per_s": 96.57012015438026
+            },
+            {
+              "context": "768-1024",
+              "tokens_per_s": 96.81576489139239
+            }
+          ]
+        },
+        "no_cache": {
+          "tokens": 1017,
+          "seconds": 10.927841424942017,
+          "tokens_per_s": 93.06504006168778,
+          "quarters": [
+            {
+              "context": "7-256",
+              "tokens_per_s": 96.53667196099421
+            },
+            {
+              "context": "256-512",
+              "tokens_per_s": 95.14167458596997
+            },
+            {
+              "context": "512-768",
+              "tokens_per_s": 91.54695053613457
+            },
+            {
+              "context": "768-1024",
+              "tokens_per_s": 89.46646700459905
+            }
+          ]
+        }
+      }
+    },
+    "Ours (336M)": {
+      "correctness": {
+        "steps": 64,
+        "max_logit_diff": 2.288818359375e-05,
+        "same_tokens": true
+      },
+      "speed": {
+        "cache": {
+          "tokens": 1017,
+          "seconds": 20.433552265167236,
+          "tokens_per_s": 49.771081738619884,
+          "quarters": [
+            {
+              "context": "7-256",
+              "tokens_per_s": 50.116742577299135
+            },
+            {
+              "context": "256-512",
+              "tokens_per_s": 49.90733428431059
+            },
+            {
+              "context": "512-768",
+              "tokens_per_s": 49.572288835676915
+            },
+            {
+              "context": "768-1024",
+              "tokens_per_s": 49.502359718810624
+            }
+          ]
+        },
+        "no_cache": {
+          "tokens": 1017,
+          "seconds": 20.765726804733276,
+          "tokens_per_s": 48.97492919767143,
+          "quarters": [
+            {
+              "context": "7-256",
+              "tokens_per_s": 50.35457814018538
+            },
+            {
+              "context": "256-512",
+              "tokens_per_s": 49.49099929898548
+            },
+            {
+              "context": "512-768",
+              "tokens_per_s": 48.6104910274197
+            },
+            {
+              "context": "768-1024",
+              "tokens_per_s": 47.5678742360951
+            }
+          ]
+        }
+      }
+    }
+  }
+}

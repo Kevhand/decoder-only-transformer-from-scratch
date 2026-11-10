@@ -1,5 +1,36 @@
+# Data and model files (large; hosted on the Hugging Face Hub instead)
 data/
 checkpoints/
-__pycache__/
+checkpoints_*/
+artifacts/
+artifacts_*/
 *.pt
+*.npy
+*.tar.gz
+*.zip
+
+# Evaluation caches and backups
+eval_data/
+cache/
+.cache/
+results_backup*/
+
+# Python
+__pycache__/
 *.pyc
+.venv/
+venv/
+
+# LaTeX build files
+docs/latex/*.aux
+docs/latex/*.log
+docs/latex/*.out
+docs/latex/*.bbl
+docs/latex/*.blg
+docs/latex/*.fls
+docs/latex/*.fdb_latexmk
+docs/latex/*.xdv
+
+# Secrets
+.env
+*.token

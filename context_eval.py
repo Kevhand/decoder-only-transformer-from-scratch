@@ -10,8 +10,9 @@ Tests
                   decoding produces every token of the word. Also reports its perplexity.
   squad           Reading comprehension: a Wikipedia paragraph, a question, two worked
                   examples first. The answer is generated up to the newline and scored
-                  with SQuAD exact match and F1. Each question is also asked without the
-                  paragraph ("closed book"), so the gain from the context is visible.
+                  with SQuAD exact match and F1, and with a looser check: does a correct
+                  answer appear anywhere in the output? Each question is also asked without
+                  the paragraph ("closed book"), so the gain from the context is visible.
   counterfactual  25 simple fact questions, each asked three ways: no passage, a passage
                   with the true answer, and a passage stating a false answer. Scored by
                   which of the two answers the model finds more likely. Shows how much a
@@ -117,6 +118,13 @@ def f1(prediction, golds):
     return max(score(prediction, g) for g in golds)
 
 
+def contains_answer(prediction, golds):
+    """Looser check: does a correct answer appear anywhere in the output, as whole words?
+    Separates "couldn't find the answer" from "found it but wrapped it in a sentence"."""
+    padded = f" {normalize(prediction)} "
+    return max((float(f" {normalize(g)} " in padded) for g in golds if normalize(g)), default=0.0)
+
+
 @torch.no_grad()
 def greedy_until_newline(m, ids, max_new, device, autocast):
     """Greedy generation with the KV cache, stopping at the first newline."""
@@ -177,7 +185,7 @@ def squad_prompt(demos, ex, with_context):
 def test_squad(m, demos, examples, device, autocast):
     results = {}
     for mode, with_context in (("open_book", True), ("closed_book", False)):
-        em = f1_total = 0.0
+        em = f1_total = found = words = 0.0
         shown = []
         for ex in examples:
             used = list(demos)
@@ -189,11 +197,17 @@ def test_squad(m, demos, examples, device, autocast):
             answer = greedy_until_newline(m, ids, 20, device, autocast)
             em += exact_match(answer, ex["answers"])
             f1_total += f1(answer, ex["answers"])
+            found += contains_answer(answer, ex["answers"])
+            words += len(answer.split())
             if len(shown) < 5:
                 shown.append({"question": ex["question"], "gold": ex["answers"][0], "answer": answer})
-        results[mode] = {"exact_match": em / len(examples), "f1": f1_total / len(examples), "samples": shown}
+        results[mode] = {"exact_match": em / len(examples), "f1": f1_total / len(examples),
+                         "contains_answer": found / len(examples), "avg_words": words / len(examples),
+                         "samples": shown}
     results["examples"] = len(examples)
     results["f1_gain_from_context"] = results["open_book"]["f1"] - results["closed_book"]["f1"]
+    results["contains_gain_from_context"] = (results["open_book"]["contains_answer"]
+                                             - results["closed_book"]["contains_answer"])
     return results
 
 
@@ -253,6 +267,14 @@ def write_report(results, path):
                            [[n, f"{r['open_book']['exact_match']:.1%}", f"{r['open_book']['f1']:.1%}",
                              f"{r['closed_book']['exact_match']:.1%}", f"{r['closed_book']['f1']:.1%}",
                              f"{r['f1_gain_from_context'] * 100:+.1f} pts"] for n, r in rows]),
+                     "Looser check: does a correct answer appear anywhere in the generated answer (as whole words)? "
+                     "This separates not finding the answer from finding it but answering in a full sentence, "
+                     "which exact match scores as 0. Answers stop at the first newline or 20 tokens.",
+                     table(["Model", "With passage: answer found", "Without passage: answer found",
+                            "Gain from passage", "Average answer length (words)"],
+                           [[n, f"{r['open_book']['contains_answer']:.1%}", f"{r['closed_book']['contains_answer']:.1%}",
+                             f"{r['contains_gain_from_context'] * 100:+.1f} pts", f"{r['open_book']['avg_words']:.1f}"]
+                            for n, r in rows if "contains_answer" in r["open_book"]]),
                      "Sample answers (with passage):\n\n" + "\n".join(
                          f"- **{n}**: " + "; ".join(f"Q: {s['question']} → *{s['answer']}* (gold: {s['gold']})"
                                                     for s in r["open_book"]["samples"][:3]) for n, r in rows)]

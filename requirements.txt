@@ -1,0 +1,17 @@
+# Model, training and tests
+torch>=2.2
+numpy
+tqdm
+
+# Data (streaming FineWeb-Edu) and Hugging Face uploads
+datasets
+huggingface_hub
+pyarrow
+
+# Evaluation against GPT-2 and charts
+transformers
+lm_eval
+matplotlib
+
+# Tokenizer comparison only (Tokenizer/compare_tokenizers.py)
+tiktoken

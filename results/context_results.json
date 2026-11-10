@@ -10,6 +10,8 @@
         "open_book": {
           "exact_match": 0.001,
           "f1": 0.08255939158740684,
+          "contains_answer": 0.089,
+          "avg_words": 13.413,
           "samples": [
             {
               "question": "Which NFL team represented the AFC at Super Bowl 50?",
@@ -41,6 +43,8 @@
         "closed_book": {
           "exact_match": 0.002,
           "f1": 0.046315847061833705,
+          "contains_answer": 0.008,
+          "avg_words": 7.835,
           "samples": [
             {
               "question": "Which NFL team represented the AFC at Super Bowl 50?",
@@ -70,7 +74,8 @@
           ]
         },
         "examples": 1000,
-        "f1_gain_from_context": 0.036243544525573136
+        "f1_gain_from_context": 0.036243544525573136,
+        "contains_gain_from_context": 0.08099999999999999
       },
       "counterfactual": {
         "facts": 25,
@@ -291,6 +296,8 @@
         "open_book": {
           "exact_match": 0.093,
           "f1": 0.197921275373982,
+          "contains_answer": 0.164,
+          "avg_words": 4.95,
           "samples": [
             {
               "question": "Which NFL team represented the AFC at Super Bowl 50?",
@@ -322,6 +329,8 @@
         "closed_book": {
           "exact_match": 0.009,
           "f1": 0.04837715944746835,
+          "contains_answer": 0.012,
+          "avg_words": 3.241,
           "samples": [
             {
               "question": "Which NFL team represented the AFC at Super Bowl 50?",
@@ -351,7 +360,8 @@
           ]
         },
         "examples": 1000,
-        "f1_gain_from_context": 0.14954411592651365
+        "f1_gain_from_context": 0.14954411592651365,
+        "contains_gain_from_context": 0.152
       },
       "counterfactual": {
         "facts": 25,
@@ -572,6 +582,8 @@
         "open_book": {
           "exact_match": 0.24,
           "f1": 0.3640202968601918,
+          "contains_answer": 0.311,
+          "avg_words": 4.019,
           "samples": [
             {
               "question": "Which NFL team represented the AFC at Super Bowl 50?",
@@ -603,6 +615,8 @@
         "closed_book": {
           "exact_match": 0.023,
           "f1": 0.0796084122207343,
+          "contains_answer": 0.032,
+          "avg_words": 3.887,
           "samples": [
             {
               "question": "Which NFL team represented the AFC at Super Bowl 50?",
@@ -632,7 +646,8 @@
           ]
         },
         "examples": 1000,
-        "f1_gain_from_context": 0.28441188463945755
+        "f1_gain_from_context": 0.28441188463945755,
+        "contains_gain_from_context": 0.279
       },
       "counterfactual": {
         "facts": 25,
@@ -853,6 +868,8 @@
         "open_book": {
           "exact_match": 0.323,
           "f1": 0.45724648955208513,
+          "contains_answer": 0.425,
+          "avg_words": 4.184,
           "samples": [
             {
               "question": "Which NFL team represented the AFC at Super Bowl 50?",
@@ -884,6 +901,8 @@
         "closed_book": {
           "exact_match": 0.022,
           "f1": 0.08245834916831825,
+          "contains_answer": 0.03,
+          "avg_words": 4.141,
           "samples": [
             {
               "question": "Which NFL team represented the AFC at Super Bowl 50?",
@@ -913,7 +932,8 @@
           ]
         },
         "examples": 1000,
-        "f1_gain_from_context": 0.3747881403837669
+        "f1_gain_from_context": 0.3747881403837669,
+        "contains_gain_from_context": 0.395
       },
       "counterfactual": {
         "facts": 25,
@@ -1104,6 +1124,292 @@
             "knows": true,
             "reads_support": true,
             "follows_counterfactual": true
+          },
+          {
+            "question": "At what temperature in Celsius does water boil at sea level?",
+            "true": "100 degrees",
+            "false": "80 degrees",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which animal is the largest mammal?",
+            "true": "the blue whale",
+            "false": "the elephant",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          }
+        ]
+      }
+    },
+    "Ours (336M)": {
+      "lambada": {
+        "examples": 5153,
+        "accuracy": 0.3054531340966427,
+        "word_perplexity": 51.684837341308594
+      },
+      "squad": {
+        "open_book": {
+          "exact_match": 0.032,
+          "f1": 0.14580376809847848,
+          "contains_answer": 0.183,
+          "avg_words": 11.816,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "The AFC at Super Bowl 50 was the first team to play in the NFL. The A"
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "On 7 January 1900, the Super Bowl was played on 7 January 1900 at Levi's Stadium in"
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "Super Bowl 50 was held on February 7, 2016, at the San Francisco Bay Area. The game"
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "The Carolina Panthers"
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "The ratio was 1:1.5."
+            }
+          ]
+        },
+        "closed_book": {
+          "exact_match": 0.007,
+          "f1": 0.06260927840153817,
+          "contains_answer": 0.02,
+          "avg_words": 6.161,
+          "samples": [
+            {
+              "question": "Which NFL team represented the AFC at Super Bowl 50?",
+              "gold": "Denver Broncos",
+              "answer": "The AFC"
+            },
+            {
+              "question": "What day was the Super Bowl played on?",
+              "gold": "February 7, 2016",
+              "answer": "October 4, 1900"
+            },
+            {
+              "question": "What month, day and year did Super Bowl 50 take place? ",
+              "gold": "February 7, 2016",
+              "answer": "April 4, 1950"
+            },
+            {
+              "question": "Which Carolina Panthers player was named Most Valuable Player?",
+              "gold": "Cam Newton",
+              "answer": "Johnny Cash"
+            },
+            {
+              "question": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+              "gold": "15\u20131",
+              "answer": "1.5"
+            }
+          ]
+        },
+        "examples": 1000,
+        "f1_gain_from_context": 0.08319448969694031,
+        "contains_gain_from_context": 0.163
+      },
+      "counterfactual": {
+        "facts": 25,
+        "closed_book": 0.8,
+        "supporting_passage": 1.0,
+        "counterfactual_follows_context": 0.96,
+        "per_fact": [
+          {
+            "question": "What is the capital of France?",
+            "true": "Paris",
+            "false": "Lyon",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Japan?",
+            "true": "Tokyo",
+            "false": "Osaka",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Italy?",
+            "true": "Rome",
+            "false": "Milan",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Germany?",
+            "true": "Berlin",
+            "false": "Munich",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the capital of Egypt?",
+            "true": "Cairo",
+            "false": "Alexandria",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest planet in the solar system?",
+            "true": "Jupiter",
+            "false": "Saturn",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is closest to the Sun?",
+            "true": "Mercury",
+            "false": "Venus",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which planet is known as the Red Planet?",
+            "true": "Mars",
+            "false": "Venus",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the chemical symbol for gold?",
+            "true": "Au",
+            "false": "Ag",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which gas do plants absorb from the air for photosynthesis?",
+            "true": "carbon dioxide",
+            "false": "nitrogen",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "How many legs does a spider have?",
+            "true": "eight",
+            "false": "six",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the smallest prime number?",
+            "true": "two",
+            "false": "three",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who wrote Romeo and Juliet?",
+            "true": "William Shakespeare",
+            "false": "Charles Dickens",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who painted the Mona Lisa?",
+            "true": "Leonardo da Vinci",
+            "false": "Vincent van Gogh",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the largest ocean on Earth?",
+            "true": "the Pacific Ocean",
+            "false": "the Atlantic Ocean",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the longest river in Africa?",
+            "true": "the Nile",
+            "false": "the Congo",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the tallest mountain in the world?",
+            "true": "Mount Everest",
+            "false": "Mount Kilimanjaro",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the hardest natural substance?",
+            "true": "diamond",
+            "false": "quartz",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Which organ pumps blood through the body?",
+            "true": "the heart",
+            "false": "the liver",
+            "knows": false,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What is the currency of Japan?",
+            "true": "the yen",
+            "false": "the won",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "What language is mainly spoken in Brazil?",
+            "true": "Portuguese",
+            "false": "Spanish",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "Who was the first person to walk on the Moon?",
+            "true": "Neil Armstrong",
+            "false": "Yuri Gagarin",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": true
+          },
+          {
+            "question": "In which year did World War II end?",
+            "true": "1945",
+            "false": "1950",
+            "knows": true,
+            "reads_support": true,
+            "follows_counterfactual": false
           },
           {
             "question": "At what temperature in Celsius does water boil at sea level?",

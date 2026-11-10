@@ -36,7 +36,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "Tokenizer"))
 
-from Tokenizer.byte_level_bpe import ByteLevelBPETokenizer  # noqa: E402
+from byte_level_bpe import ByteLevelBPETokenizer  # noqa: E402
 from Decoder_Blocks.transformer_model import TransformerModel  # noqa: E402
 
 
@@ -381,6 +381,7 @@ def main(argv=None):
                                    ignore_index=tokenizer.pad_id) / grad_accum
             loss.backward()
             loss_sum += loss.detach()
+            del logits, loss  # free this micro-batch's logits before the next forward pass
 
         grad_norm = torch.nn.utils.clip_grad_norm_(raw_model.parameters(), args.grad_clip)
         optimizer.step()

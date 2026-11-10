@@ -8,6 +8,7 @@
 | GPT-2 small (124M) | 30.93% | 38.9 |
 | GPT-2 medium (355M) | 41.41% | 17.8 |
 | GPT-2 large (774M) | 47.31% | 13.0 |
+| Ours (336M) | 30.55% | 51.7 |
 
 ## SQuAD reading comprehension (2 worked examples)
 
@@ -17,6 +18,17 @@
 | GPT-2 small (124M) | 9.3% | 19.8% | 0.9% | 4.8% | +15.0 pts |
 | GPT-2 medium (355M) | 24.0% | 36.4% | 2.3% | 8.0% | +28.4 pts |
 | GPT-2 large (774M) | 32.3% | 45.7% | 2.2% | 8.2% | +37.5 pts |
+| Ours (336M) | 3.2% | 14.6% | 0.7% | 6.3% | +8.3 pts |
+
+Looser check: does a correct answer appear anywhere in the generated answer (as whole words)? This separates not finding the answer from finding it but answering in a full sentence, which exact match scores as 0. Answers stop at the first newline or 20 tokens.
+
+| Model | With passage: answer found | Without passage: answer found | Gain from passage | Average answer length (words) |
+|---|---|---|---|---|
+| Ours (110M) | 8.9% | 0.8% | +8.1 pts | 13.4 |
+| GPT-2 small (124M) | 16.4% | 1.2% | +15.2 pts | 5.0 |
+| GPT-2 medium (355M) | 31.1% | 3.2% | +27.9 pts | 4.0 |
+| GPT-2 large (774M) | 42.5% | 3.0% | +39.5 pts | 4.2 |
+| Ours (336M) | 18.3% | 2.0% | +16.3 pts | 11.8 |
 
 Sample answers (with passage):
 
@@ -24,6 +36,7 @@ Sample answers (with passage):
 - **GPT-2 small (124M)**: Q: Which NFL team represented the AFC at Super Bowl 50? → *the New England Patriots.* (gold: Denver Broncos); Q: What day was the Super Bowl played on? → *the day of the Super Bowl* (gold: February 7, 2016); Q: What month, day and year did Super Bowl 50 take place?  → *January* (gold: February 7, 2016)
 - **GPT-2 medium (355M)**: Q: Which NFL team represented the AFC at Super Bowl 50? → *Denver Broncos* (gold: Denver Broncos); Q: What day was the Super Bowl played on? → *Sunday, February 7, 2016* (gold: February 7, 2016); Q: What month, day and year did Super Bowl 50 take place?  → *January* (gold: February 7, 2016)
 - **GPT-2 large (774M)**: Q: Which NFL team represented the AFC at Super Bowl 50? → *The Denver Broncos* (gold: Denver Broncos); Q: What day was the Super Bowl played on? → *February 7, 2016* (gold: February 7, 2016); Q: What month, day and year did Super Bowl 50 take place?  → *February 7, 2016* (gold: February 7, 2016)
+- **Ours (336M)**: Q: Which NFL team represented the AFC at Super Bowl 50? → *The AFC at Super Bowl 50 was the first team to play in the NFL. The A* (gold: Denver Broncos); Q: What day was the Super Bowl played on? → *On 7 January 1900, the Super Bowl was played on 7 January 1900 at Levi's Stadium in* (gold: February 7, 2016); Q: What month, day and year did Super Bowl 50 take place?  → *Super Bowl 50 was held on February 7, 2016, at the San Francisco Bay Area. The game* (gold: February 7, 2016)
 
 ## Closed book vs open book vs counterfactual passage
 
@@ -35,3 +48,4 @@ Share of the 25 fact questions where the model prefers the true answer (first tw
 | GPT-2 small (124M) | 68% | 96% | 96% |
 | GPT-2 medium (355M) | 80% | 100% | 100% |
 | GPT-2 large (774M) | 84% | 100% | 100% |
+| Ours (336M) | 80% | 100% | 96% |
