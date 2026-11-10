@@ -6,6 +6,8 @@ A GPT-style language model built from scratch, tokenizer included, and trained a
 
 **📄 [Technical report (PDF)](docs/technical_report.pdf)**: the full architecture, data, training and evaluation details.
 
+**✍️ [Blog series](https://yashksingh.hashnode.dev/)**: the learning journey behind it, one post per stage, from tokenization to evaluation.
+
 ## Results at a glance
 
 | | 110M | 336M |

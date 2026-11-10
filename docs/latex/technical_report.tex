@@ -27,6 +27,7 @@
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{needspace}
+\usepackage{ragged2e}
 \setlist{itemsep=2pt,topsep=4pt}
 \usepackage{fvextra}
 \usepackage[numbers,sort&compress]{natbib}
@@ -36,6 +37,8 @@
 \usepackage{xurl}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{titlesec}
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \titleformat{\section}{\large\bfseries}{\thesection}{0.8em}{}
 \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.8em}{}
 \setlength{\parskip}{0.45em}
@@ -47,17 +50,44 @@
 \date{November 2026}
 
 \begin{document}
-\maketitle
 
-\begin{center}
-\begin{minipage}{0.86\linewidth}
+\begin{titlepage}
+\centering
+\vspace*{2.2cm}
+{\LARGE\bfseries Decoder-Only Transformer from Scratch\par}
+\vspace{0.4cm}
+{\large Technical Report\par}
+\vspace{1.2cm}
+{\large Yash Singh\par}
+\vspace{0.3cm}
+{November 2026\par}
+\vspace{1.4cm}
+\begin{minipage}{0.84\linewidth}
 \itshape In my earlier projects, like LinkLens-V2 and FACTIFY, I used transformer models through libraries, and I always wanted to understand how they actually work underneath. So instead of using the libraries as they are, I built every part from scratch, from the tokenizer to the evaluation, and trained it at two sizes. This report documents the final models and their results; the blog series describes how I got there, including the mistakes along the way.
 \end{minipage}
-\end{center}
+\vspace{1.2cm}
 
-\begin{abstract}
-\noindent This report describes two decoder-only transformer language models, with 110M and 336M parameters, built from scratch, including a byte-level BPE tokenizer, rotary position embeddings, multi-head causal attention with a KV cache, and a tested training and evaluation pipeline. Both were trained on FineWeb-Edu (2.5B and 7.0B tokens) on two NVIDIA A30 GPUs, in about 4.6 and 34.7 hours. On held-out FineWeb-Edu text they reach 1.000 and 0.897 bits per byte, better than the size-matched GPT-2 models (1.009 and 0.926), and they outperform them on science and knowledge benchmarks (ARC, SciQ, OpenBookQA), where the 336M also beats GPT-2 large. On other kinds of text, on commonsense benchmarks and on LAMBADA they fall behind, and their 8-task zero-shot average is about one point below GPT-2 at both sizes. The results follow the training data: an educationally filtered corpus buys knowledge and in-domain modelling at the cost of breadth.
-\end{abstract}
+{\bfseries Abstract\par}
+\vspace{0.3cm}
+\begin{minipage}{0.84\linewidth}
+\small\justifying\noindent
+This report describes two decoder-only transformer language models, with 110M and 336M parameters, built from scratch, including a byte-level BPE tokenizer, rotary position embeddings, multi-head causal attention with a KV cache, and a tested training and evaluation pipeline. Both were trained on FineWeb-Edu (2.5B and 7.0B tokens) on two NVIDIA A30 GPUs, in about 4.6 and 34.7 hours. On held-out FineWeb-Edu text they reach 1.000 and 0.897 bits per byte, better than the size-matched GPT-2 models (1.009 and 0.926), and they outperform them on science and knowledge benchmarks (ARC, SciQ, OpenBookQA), where the 336M also beats GPT-2 large. On other kinds of text, on commonsense benchmarks and on LAMBADA they fall behind, and their 8-task zero-shot average is about one point below GPT-2 at both sizes. The results follow the training data: an educationally filtered corpus buys knowledge and in-domain modelling at the cost of breadth.
+\end{minipage}
+
+\vfill
+{\small
+\textbf{Code:} \href{https://github.com/Kevhand/decoder-only-transformer-from-scratch}{github.com/Kevhand/decoder-only-transformer-from-scratch}\\[0.25em]
+\textbf{Models:} \href{https://huggingface.co/Kevhand}{huggingface.co/Kevhand}
+\quad\textperiodcentered\quad
+\textbf{Blog:} \href{https://yashksingh.hashnode.dev/}{yashksingh.hashnode.dev}\par}
+\vspace{0.6cm}
+\end{titlepage}
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+{\hypersetup{linkcolor=black}\tableofcontents}
+\clearpage
+\pagenumbering{arabic}
 
 \section{Summary}
 
