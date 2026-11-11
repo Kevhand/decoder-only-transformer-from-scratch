@@ -2,7 +2,7 @@
 
 A GPT-style language model built from scratch, tokenizer included, and trained at two sizes (110M and 336M parameters) on FineWeb-Edu with two GPUs, then evaluated against GPT-2.
 
-> *In my earlier projects, like LinkLens-V2 and FACTIFY, I used transformer models through libraries, and I always wanted to understand how they actually work underneath. So instead of using the libraries as they are, I built every part from scratch, from the tokenizer to the evaluation, and trained it at two sizes.*
+> *Built to understand what happens inside a transformer, not just how to call one. Every part is written from scratch, from the tokenizer to the evaluation.*
 
 **📄 [Technical report (PDF)](docs/technical_report.pdf)**: the full architecture, data, training and evaluation details.
 
